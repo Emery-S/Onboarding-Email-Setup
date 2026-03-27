@@ -13,7 +13,6 @@ export default async function handler(req, res) {
     return res.status(405).send("Method Not Allowed");
   }
 
-  // Buffer raw body without 'micro' — works natively on Vercel
   const rawBody = await new Promise((resolve, reject) => {
     const chunks = [];
     req.on("data", (chunk) => chunks.push(chunk));
@@ -37,14 +36,31 @@ export default async function handler(req, res) {
     const session = event.data.object;
     const email = session.customer_details?.email;
 
-    const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
-    const productName = lineItems.data[0]?.description || "";
+    if (!email) {
+      console.error("No email found on session:", session.id);
+      return res.status(200).json({ received: true });
+    }
+
+    let productName = "";
+    try {
+      const lineItems = await stripe.checkout.sessions.listLineItems(session.id, {
+        expand: ["data.price.product"],
+      });
+      const product = lineItems.data[0]?.price?.product;
+      productName =
+        (typeof product === "object" ? product?.name : "") ||
+        lineItems.data[0]?.description ||
+        "";
+    } catch (err) {
+      console.error("Failed to fetch line items:", err.message);
+      return res.status(500).send("Failed to fetch line items");
+    }
 
     console.log(`Purchase: "${productName}" → ${email}`);
 
-    if (productName.includes("Rising Star")) await sendEmail(email, "rising");
-    if (productName.includes("North Star"))  await sendEmail(email, "north");
-    if (productName.includes("Executive"))   await sendEmail(email, "executive");
+    if (productName.includes("Rising Star"))  await sendEmail(email, "rising");
+    if (productName.includes("North Star"))   await sendEmail(email, "north");
+    if (productName.includes("Executive"))    await sendEmail(email, "executive");
   }
 
   return res.status(200).json({ received: true });
@@ -87,18 +103,13 @@ async function sendEmail(to, type) {
   if (!response.ok) {
     const error = await response.text();
     console.error(`Resend error for [${type}] to ${to}:`, error);
+    throw new Error(`Resend failed: ${error}`);
   } else {
     console.log(`Email [${type}] sent to ${to}`);
   }
 }
 
 // ─── SHARED STYLES ────────────────────────────────────────────────────────────
-// LOGO SETUP:
-//   1. Create a /public folder in your project root
-//   2. Add your logo as /public/logo.png
-//   3. Deploy to Vercel
-//   4. Replace YOUR_LOGO_URL below (all 3 spots) with:
-//      https://your-project.vercel.app/logo.png
 
 const SHARED_STYLES = `
 <style>
@@ -231,7 +242,7 @@ const RISING_STAR_HTML = `<!DOCTYPE html>
   <div class="container">
 
     <div class="header">
-      <img src="YOUR_LOGO_URL" alt="MN Women in AI" class="logo" />
+      <img src="logo.png" alt="MN Women in AI" class="logo" />
       <div class="badge">Rising Star Membership</div>
       <h1>You're officially in. 💜</h1>
       <p class="tagline">Welcome to the MN Women in AI community — 500+ women learning, building, and shaping the future of AI in Minnesota.</p>
@@ -306,7 +317,7 @@ const NORTH_STAR_HTML = `<!DOCTYPE html>
   <div class="container">
 
     <div class="header">
-      <img src="YOUR_LOGO_URL" alt="MN Women in AI" class="logo" />
+      <img src="logo.png" alt="MN Women in AI" class="logo" />
       <div class="badge">North Star Membership</div>
       <h1>Welcome and thank you for going all in. 💜</h1>
       <p class="tagline">You just became a North Star Member of MN Women in AI — a community of 500+ women across Minnesota at the center of how AI gets built and adopted.</p>
@@ -383,7 +394,7 @@ const EXECUTIVE_HTML = `<!DOCTYPE html>
   <div class="container">
 
     <div class="header">
-      <img src="YOUR_LOGO_URL" alt="MN Women in AI" class="logo" />
+      <img src="logo.png" alt="MN Women in AI" class="logo" />
       <div class="badge">Executive Insider</div>
       <h1>Let's build something. 💜</h1>
       <p class="tagline">Welcome to Executive Insider — Minnesota's network for women leading, shaping, and accelerating AI.</p>
