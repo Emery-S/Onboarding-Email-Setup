@@ -305,23 +305,6 @@ const RISING_STAR_HTML = `<!DOCTYPE html>
 
           <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
 
-          <!-- FOUNDING MEMBER -->
-          <table width="100%" cellpadding="0" cellspacing="0" border="0">
-            <tr>
-              <td style="background-color:#f7f0ff;border-left:3px solid #9933ee;padding:20px 24px;">
-                <p class="founding-label" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#7700cc;margin:0 0 10px;">⭐ Founding Member Bonus</p>
-                <p style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#2d1a4a;line-height:1.75;margin:0 0 10px;">Because you joined before March 31st, you're a Founding Member. You'll receive special recognition on our website and an exclusive invitation to our Founding Member celebration this spring.</p>
-                <ul style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#2d1a4a;line-height:1.85;margin:0;padding-left:18px;">
-                  <li>Special recognition on our website</li>
-                  <li>A shareable Founding Member graphic for your socials</li>
-                  <li>Exclusive invitation to our Founding Member celebration this spring</li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-
-          <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
-
           <!-- EVENT CODE -->
           <p class="code-label" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9070b0;text-align:center;margin:0 0 10px;">Your code for up to 3 free events per month</p>
           <p class="code-value" style="font-family:'Courier New',Courier,monospace;font-size:24px;font-weight:bold;letter-spacing:4px;color:#3b0075;text-align:center;background-color:#f0e8ff;padding:14px 32px;margin:0;">RISINGSTAR</p>
@@ -393,23 +376,6 @@ const NORTH_STAR_HTML = `<!DOCTYPE html>
             <li><strong>Your local AI opportunities newsletter</strong> <em>(coming in April)</em></li>
           </ul>
           <p class="note-text" style="font-family:Helvetica,Arial,sans-serif;font-size:12px;color:#9070b0;font-style:italic;margin:8px 0 0;">Keep an eye on Slack and our Substack for event announcements. AI Accountability Group invitations will arrive via email.</p>
-
-          <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
-
-          <!-- FOUNDING MEMBER -->
-          <table width="100%" cellpadding="0" cellspacing="0" border="0">
-            <tr>
-              <td style="background-color:#f7f0ff;border-left:3px solid #9933ee;padding:20px 24px;">
-                <p class="founding-label" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#7700cc;margin:0 0 10px;">⭐ Founding Member Bonus</p>
-                <p style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#2d1a4a;line-height:1.75;margin:0 0 10px;">Because you joined before March 31st, you're a Founding Member. You'll receive special recognition on our website and an exclusive invitation to our Founding Member celebration this spring.</p>
-                <ul style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#2d1a4a;line-height:1.85;margin:0;padding-left:18px;">
-                  <li>Special recognition on our website</li>
-                  <li>A shareable Founding Member graphic for your socials</li>
-                  <li>Exclusive invitation to our Founding Member celebration this spring</li>
-                </ul>
-              </td>
-            </tr>
-          </table>
 
           <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
 
@@ -490,23 +456,6 @@ const EXECUTIVE_HTML = `<!DOCTYPE html>
             <li>Opportunities to share content on our website &amp; socials</li>
             <li>Scholarships for students and new grads in your network</li>
           </ul>
-
-          <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
-
-          <!-- FOUNDING MEMBER -->
-          <table width="100%" cellpadding="0" cellspacing="0" border="0">
-            <tr>
-              <td style="background-color:#f7f0ff;border-left:3px solid #9933ee;padding:20px 24px;">
-                <p class="founding-label" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#7700cc;margin:0 0 10px;">⭐ Founding Member Bonus</p>
-                <p style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#2d1a4a;line-height:1.75;margin:0 0 10px;">Because you joined before March 31st, you're a Founding Member. You'll receive special recognition on our website and an exclusive invitation to our Founding Member celebration this spring.</p>
-                <ul style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#2d1a4a;line-height:1.85;margin:0;padding-left:18px;">
-                  <li>Special recognition on our website</li>
-                  <li>A shareable Founding Member graphic for your socials</li>
-                  <li>Exclusive invitation to our Founding Member celebration this spring</li>
-                </ul>
-              </td>
-            </tr>
-          </table>
 
           <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
 
