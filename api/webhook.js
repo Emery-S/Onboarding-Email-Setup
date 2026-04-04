@@ -58,7 +58,7 @@ export default async function handler(req, res) {
 
     console.log(`Purchase: "${productName}" → ${email}`);
 
-    if (productName.includes("Student Star"))  await sendEmail(email, "student");
+    if (productName.includes("Student"))       await sendEmail(email, "student");
     else if (productName.includes("Rising Star"))  await sendEmail(email, "rising");
     if (productName.includes("North Star"))   await sendEmail(email, "north");
     if (productName.includes("Executive"))    await sendEmail(email, "executive");
