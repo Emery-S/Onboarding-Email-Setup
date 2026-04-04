@@ -58,7 +58,8 @@ export default async function handler(req, res) {
 
     console.log(`Purchase: "${productName}" → ${email}`);
 
-    if (productName.includes("Rising Star"))  await sendEmail(email, "rising");
+    if (productName.includes("Student Star"))  await sendEmail(email, "student");
+    else if (productName.includes("Rising Star"))  await sendEmail(email, "rising");
     if (productName.includes("North Star"))   await sendEmail(email, "north");
     if (productName.includes("Executive"))    await sendEmail(email, "executive");
   }
@@ -70,6 +71,10 @@ export default async function handler(req, res) {
 
 async function sendEmail(to, type) {
   const templates = {
+    student: {
+      subject: "You're in. Welcome to MN Women in AI 💜",
+      html: STUDENT_STAR_HTML,
+    },
     rising: {
       subject: "You're in. Welcome to the MN Women in AI Rising Star Membership Program 💜",
       html: RISING_STAR_HTML,
@@ -251,6 +256,81 @@ const SHARED_STYLES = `
   .footer-cell strong { color: #2d0055; }
   .footer-cell em { color: #9070b0; font-style: italic; }
 </style>`;
+
+// ─── STUDENT STAR ─────────────────────────────────────────────────────────────
+
+const STUDENT_STAR_HTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome, Student Star</title>
+  ${SHARED_STYLES}
+</head>
+<body>
+<span class="preheader">You're officially in. Welcome to MN Women in AI. 💜</span>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4eeff;">
+  <tr><td class="outer">
+    <table class="card" width="580" cellpadding="0" cellspacing="0" border="0" align="center" style="background:#ffffff;max-width:580px;margin:0 auto;">
+
+      <!-- HEADER -->
+      <tr>
+        <td class="header-cell" align="center" style="background-color:#3b0075;padding:44px 48px 36px;text-align:center;">
+          <img src="https://onboarding-email-setup.vercel.app/logo.png" alt="MN Women in AI" width="90" height="90" class="logo-img" style="width:90px;height:90px;margin:0 auto 20px;display:block;" />
+          <div class="badge-text" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase;color:#ddc8ff;border:1px solid rgba(220,180,255,0.4);padding:4px 14px;display:inline-block;margin-bottom:18px;">Student Star Membership</div>
+          <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:normal;color:#ffffff;line-height:1.3;margin:0 0 12px;">You're officially in. 💜</h1>
+          <p class="tagline" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#c8a8f0;line-height:1.65;margin:0;">Welcome to MN Women in AI — 500+ women learning, building, and shaping the future of AI in Minnesota. We're so glad you're starting your journey with us.</p>
+        </td>
+      </tr>
+
+      <!-- BODY -->
+      <tr>
+        <td class="body-cell" style="background-color:#ffffff;padding:40px 48px;">
+          <p style="font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.75;color:#2d1a4a;margin:0 0 20px;">We believe the next generation of AI leaders is already in the room — and we're so glad you're one of them. This community was built for women who are curious, driven, and ready to grow. That's you.</p>
+
+          <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
+
+          <p class="section-label" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#7700cc;margin:0 0 8px;">A quick favor ✨</p>
+          <p class="section-heading" style="font-family:Georgia,'Times New Roman',serif;font-size:19px;font-weight:normal;color:#2d0055;margin:0 0 14px;line-height:1.3;">Two small things that make a big difference</p>
+          <ol style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#2d1a4a;line-height:1.85;margin:0 0 16px;padding-left:20px;">
+            <li style="margin-bottom:10px;"><strong>Please fill out <a href="https://forms.gle/iZkc4o1CsYYLiMa38" style="color:#6600bb;">our welcome survey</a></strong> — it helps us match you to the right people and opportunities. Takes just 3–5 minutes.</li>
+            <li><strong>Check your inbox</strong> — we sent you invitations to our <strong>Substack newsletter</strong> and <strong>Slack channel</strong>. These are the best ways to hear about new events and connect with members daily.</li>
+          </ol>
+
+          <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
+
+          <p class="section-label" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#7700cc;margin:0 0 8px;">Your membership</p>
+          <p class="section-heading" style="font-family:Georgia,'Times New Roman',serif;font-size:19px;font-weight:normal;color:#2d0055;margin:0 0 14px;line-height:1.3;">What's included</p>
+          <ul style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#2d1a4a;line-height:1.85;margin:0 0 10px;padding-left:20px;">
+            <li>Up to 3 paid expert-led events per month (AI Study Group is always free)</li>
+            <li>Access to all available event recordings</li>
+            <li>Opportunities to grow your network and skills</li>
+          </ul>
+          <p class="note-text" style="font-family:Helvetica,Arial,sans-serif;font-size:12px;color:#9070b0;font-style:italic;margin:8px 0 0;">Keep an eye on Slack and our Substack for event announcements and invites.</p>
+
+          <hr class="divider" style="border:none;border-top:1px solid #e8dcf7;margin:28px 0;" />
+
+          <!-- EVENT CODE -->
+          <p class="code-label" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9070b0;text-align:center;margin:0 0 10px;">Your code for up to 3 free events per month</p>
+          <p class="code-value" style="font-family:'Courier New',Courier,monospace;font-size:24px;font-weight:bold;letter-spacing:4px;color:#3b0075;text-align:center;background-color:#f0e8ff;padding:14px 32px;margin:0;">STUDENTSTAR</p>
+
+        </td>
+      </tr>
+
+      <!-- FOOTER -->
+      <tr>
+        <td class="footer-cell" style="background-color:#ffffff;padding:8px 48px 44px;">
+          <hr style="border:none;border-top:1px solid #e8dcf7;margin:0 0 28px;" />
+          <p style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#5a3a7a;line-height:1.75;margin:0 0 6px;">With excitement,</p>
+          <p style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#5a3a7a;line-height:1.75;margin:0;"><strong style="color:#2d0055;">Caroline Holden</strong><br>Founder, MN Women in AI<br><em style="color:#9070b0;">Brought to you by Swift Start Go</em></p>
+        </td>
+      </tr>
+
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>`;
 
 // ─── RISING STAR ──────────────────────────────────────────────────────────────
 
