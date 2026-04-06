@@ -100,6 +100,7 @@ async function sendEmail(to, type) {
     body: JSON.stringify({
       from: "Caroline Holden <caroline@contact.swiftstartgo.com>",
       to,
+      cc: "caroline@swiftstartgo.com",
       subject,
       html,
     }),
