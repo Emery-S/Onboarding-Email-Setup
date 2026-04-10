@@ -279,7 +279,7 @@ const STUDENT_STAR_HTML = `<!DOCTYPE html>
         <td class="header-cell" align="center" style="background-color:#3b0075;padding:44px 48px 36px;text-align:center;">
           <img src="https://onboarding-email-setup.vercel.app/logo.png" alt="MN Women in AI" width="90" height="90" class="logo-img" style="width:90px;height:90px;margin:0 auto 20px;display:block;" />
           <div class="badge-text" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase;color:#ddc8ff;border:1px solid rgba(220,180,255,0.4);padding:4px 14px;display:inline-block;margin-bottom:18px;">Student Star Membership</div>
-          <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:normal;color:#ffffff;line-height:1.3;margin:0 0 12px;">You're officially in. 💜</h1>
+          <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:normal;color:#ffffff;line-height:1.3;margin:0 0 12px;">You're officially in.&nbsp;💜</h1>
           <p class="tagline" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#c8a8f0;line-height:1.65;margin:0;">Welcome to MN Women in AI — 500+ women learning, building, and shaping the future of AI in Minnesota. We're so glad you're starting your journey with us.</p>
         </td>
       </tr>
@@ -354,7 +354,7 @@ const RISING_STAR_HTML = `<!DOCTYPE html>
         <td class="header-cell" align="center" style="background-color:#3b0075;padding:44px 48px 36px;text-align:center;">
           <img src="https://onboarding-email-setup.vercel.app/logo.png" alt="MN Women in AI" width="90" height="90" class="logo-img" style="width:90px;height:90px;margin:0 auto 20px;display:block;" />
           <div class="badge-text" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;letter-spacing:2.5px;text-transform:uppercase;color:#ddc8ff;border:1px solid rgba(220,180,255,0.4);padding:4px 14px;display:inline-block;margin-bottom:18px;">Rising Star Membership</div>
-          <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:normal;color:#ffffff;line-height:1.3;margin:0 0 12px;">You're officially in. 💜</h1>
+          <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:normal;color:#ffffff;line-height:1.3;margin:0 0 12px;">You're officially in.&nbsp;💜</h1>
           <p class="tagline" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#c8a8f0;line-height:1.65;margin:0;">Welcome to the MN Women in AI community — 500+ women learning, building, and shaping the future of AI in Minnesota.</p>
         </td>
       </tr>
